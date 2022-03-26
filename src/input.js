@@ -10,14 +10,15 @@ export class SearchInput extends React.Component {
       text: '',
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.resetHandleClick = this.resetHandleClick.bind(this);
+    this.searchHandleClick = this.searchHandleClick.bind(this);
   }
 
   handleChange(e) {
     this.setState({ text: e.target.value });
   }
 
-  handleClick(e) {
+  searchHandleClick() {
     const showSearchUrl = `https://api.tvmaze.com/search/shows?q=${this.state.text.toLowerCase()}`;
 
     fetch(showSearchUrl)
@@ -33,11 +34,19 @@ export class SearchInput extends React.Component {
       });
   }
 
+  resetHandleClick() {
+    this.setState({
+      searchResultsHidden: true,
+      text: '',
+    })
+  }
+
   render() {
     return (
       <div>
         <input placeholder='Search show title' value={this.state.text} onChange={this.handleChange} />
-        <button onClick={this.handleClick}>Submit</button>
+        <button onClick={this.searchHandleClick}>Submit</button>
+        <button onClick={this.resetHandleClick}>Reset</button>
         <ShowResults visibility={this.state.searchResultsHidden} showImages={this.state.showImages} />
       </div>
     )
