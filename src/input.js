@@ -5,8 +5,7 @@ export class SearchInput extends React.Component {
     super(props);
     this.state = {
       searchResultsHidden: true,
-      showImages: [],
-      showResponse: '',
+      shows: [],
       text: '',
     };
     this.handleChange = this.handleChange.bind(this);
@@ -26,11 +25,9 @@ export class SearchInput extends React.Component {
       .then((data) => {
         this.setState({
           searchResultsHidden: false,
-          showResponse: data,
-          showImages: data.map(show => show.show.image === null ? null : show.show.image.medium)
+          shows: data.map(show => show.show),
         });
-        console.log(this.state.showResponse);
-        console.log(this.state.showImages);
+        console.log(this.state.shows);
       });
   }
 
@@ -47,20 +44,38 @@ export class SearchInput extends React.Component {
         <input placeholder='Search show title' value={this.state.text} onChange={this.handleChange} />
         <button onClick={this.searchHandleClick}>Submit</button>
         <button onClick={this.resetHandleClick}>Reset</button>
-        <ShowResults visibility={this.state.searchResultsHidden} showImages={this.state.showImages} />
+        <ShowResults results={this.state.shows} visibility={this.state.searchResultsHidden} />
       </div>
     )
   }
 };
 
 class ShowResults extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      shows: this.props.results
+    };
+    this.showHandleClick = this.showHandleClick.bind(this);
+  }
+
+  showHandleClick() {
+    const allEpisodesUrl = `https://api.tvmaze.com/shows/${this.props.results[0].id}/episodes`;
+
+    fetch(allEpisodesUrl)
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }
+
   render() {
     return (
       <div hidden={this.props.visibility}>
-        {this.props.showImages.map(showImgSrc => (
-          showImgSrc === null ? 
-          <img key="noImage" src="https://static.tvmaze.com/images/no-img/no-img-portrait-text.png" alt="" /> :
-          <img key={showImgSrc} src={showImgSrc} alt="" />
+        {this.props.results.map(show => (
+          show.image === null ? 
+          <img key={show.id} onClick={this.showHandleClick} src="https://static.tvmaze.com/images/no-img/no-img-portrait-text.png" alt="" /> :
+          <img key={show.id} onClick={this.showHandleClick} src={show.image.medium} alt="" />
         ))}
       </div>
     )
