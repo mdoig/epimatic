@@ -27,7 +27,6 @@ export class SearchInput extends React.Component {
           searchResultsHidden: false,
           shows: data.map(show => show.show),
         });
-        console.log(this.state.shows);
       });
   }
 
@@ -53,19 +52,18 @@ export class SearchInput extends React.Component {
 class ShowResults extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      shows: this.props.results
-    };
     this.showHandleClick = this.showHandleClick.bind(this);
   }
 
-  showHandleClick() {
-    const allEpisodesUrl = `https://api.tvmaze.com/shows/${this.props.results[0].id}/episodes`;
+  showHandleClick(e) {
+    const allEpisodesUrl = `https://api.tvmaze.com/shows/${e.target.alt}/episodes`;
 
     fetch(allEpisodesUrl)
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
+        const episodeCount = data.length;
+        const episode = Math.floor(Math.random() * episodeCount);
+        console.log(data[episode]);
       });
   }
 
@@ -73,9 +71,9 @@ class ShowResults extends React.Component {
     return (
       <div hidden={this.props.visibility}>
         {this.props.results.map(show => (
-          show.image === null ? 
-          <img key={show.id} onClick={this.showHandleClick} src="https://static.tvmaze.com/images/no-img/no-img-portrait-text.png" alt="" /> :
-          <img key={show.id} onClick={this.showHandleClick} src={show.image.medium} alt="" />
+          show.image === null ?
+            <img title={show.name} key={show.id} onClick={this.showHandleClick} width="210" height="295" src="https://static.tvmaze.com/images/no-img/no-img-portrait-text.png" alt={show.id} /> :
+            <img title={show.name} key={show.id} onClick={this.showHandleClick} src={show.image.medium} alt={show.id} />
         ))}
       </div>
     )
