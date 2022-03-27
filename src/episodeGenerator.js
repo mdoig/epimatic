@@ -39,6 +39,7 @@ export class EpisodeGenerator extends React.Component {
         .then(response => response.json())
         .then((data) => {
           this.setState({
+            episode: '',
             episodeHidden: true,
             searchResultsHidden: false,
             shows: data.map(show => show.show),
@@ -79,7 +80,7 @@ export class EpisodeGenerator extends React.Component {
         </div>
         <div hidden={this.state.episodeHidden}>
           <p>
-            {this.state.selectedShow} &mdash; S{this.state.episode.season}E{this.state.episode.number}
+            {this.state.selectedShow} &mdash; S{this.state.episode.season} E{this.state.episode.number}
             <br />
             {this.state.episode.name}
           </p>
