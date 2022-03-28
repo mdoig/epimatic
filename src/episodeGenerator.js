@@ -78,17 +78,20 @@ export class EpisodeGenerator extends React.Component {
               <img title={show.name} key={show.id} onClick={this.showHandleClick} src={show.image.medium} alt={show.id} />
           ))}
         </div>
-        <div hidden={this.state.episodeHidden}>
-          <p>
-            {this.state.selectedShow} &mdash; S{this.state.episode.season} E{this.state.episode.number}
-            <br />
-            {this.state.episode.name}
-          </p>
-          {this.state.episode === '' ?
-            <div /> :
-            <img title={this.state.episode.name} src={this.state.episode.image.medium} alt={this.state.episode.id} />
-          }
-        </div>
+        {this.state.episode === '' ?
+          <div hidden /> :
+          <div hidden={this.state.episodeHidden}>
+            <p>
+              {this.state.selectedShow} &mdash; S{this.state.episode.season} E{this.state.episode.number}
+              <br />
+              {this.state.episode.name}
+            </p>
+            {this.state.episode.image === null ?
+              <img title={this.state.episode.name} src="https://static.tvmaze.com/images/no-img/no-img-landscape-text.png" alt={this.state.episode.id} /> :
+              <img title={this.state.episode.name} src={this.state.episode.image.medium} alt={this.state.episode.id} />
+            }
+          </div>
+        }
       </div>
     )
   }
