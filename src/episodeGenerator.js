@@ -85,6 +85,8 @@ export class EpisodeGenerator extends React.Component {
               {this.state.selectedShow} &mdash; S{this.state.episode.season} E{this.state.episode.number}
               <br />
               {this.state.episode.name}
+              <br />
+              Aired {this.state.episode.airdate}
             </p>
             {this.state.episode.image === null ?
               <img title={this.state.episode.name} src="https://static.tvmaze.com/images/no-img/no-img-landscape-text.png" alt={this.state.episode.id} /> :
