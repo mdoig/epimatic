@@ -9,7 +9,6 @@ a:visited, a:active {
 }
 
 .App {
-  text-align: center;
   align-items: center;
   color: white;
   display: flex;
@@ -17,6 +16,7 @@ a:visited, a:active {
   font-size: calc(10px + 2vmin);
   justify-content: center;
   min-height: 100vh;
+  text-align: center;
 }
 
 .App-description {
