@@ -37,7 +37,7 @@ a:visited, a:active {
 }
 
 .App-name {
-  font: 10vmin 'Limelight', cursive;
+  font: 10vmin 'Limelight', sans-serif;
   line-height: 0.8;
   margin: 0;
 }
