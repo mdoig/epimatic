@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "EpiMatic",
+  "name": "EpiMatic: A random TV episode generator",
   "icons": [
     {
       "src": "favicon.ico",

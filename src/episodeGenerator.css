@@ -1,0 +1,38 @@
+button, input {
+  font: 2vmin 'Reem Kufi', sans-serif;
+}
+
+button {
+  height: 3.7vmin;
+  margin: 0 1vmin;
+  width: 10vmin;
+}
+
+#episode {
+  font-size: 2vmin;
+}
+
+#episode-img {
+  height: 36vmin;
+  width: 64vmin;
+}
+
+#episode-name {
+  font-size: 3vmin;
+}
+
+#search-field {
+  height: 3vmin;
+  width: 25vmin;
+}
+
+#show-img {
+  height: 22vmin;
+  margin: 0 2vmin 1vmin 0;
+  width: 15vmin;
+}
+
+#show-results {
+  position: relative;
+  top: 2vmin;
+}
