@@ -18,7 +18,7 @@ button {
   width: 64vmin;
 }
 
-#episode-name {
+#episode-name, #no-results {
   font-size: 3vmin;
 }
 

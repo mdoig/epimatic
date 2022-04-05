@@ -73,15 +73,24 @@ export class EpisodeGenerator extends React.Component {
         <br />
         <button onClick={this.searchHandleClick}>Submit</button>
         <button onClick={this.resetHandleClick}>Reset</button>
-        <div id="show-results" hidden={this.state.searchResultsHidden}>
-          {this.state.shows.map(show => (
-            show.image === null ?
-              <img id="show-img" title={show.name} key={show.id} onClick={this.showHandleClick} src="https://static.tvmaze.com/images/no-img/no-img-portrait-text.png" alt={show.id} /> :
-              <img id="show-img" title={show.name} key={show.id} onClick={this.showHandleClick} src={show.image.original} alt={show.id} />
-          ))}
-        </div>
-        {this.state.episode === '' ?
-          <div hidden /> :
+        {this.state.shows.length === 0 ?
+          <div id="no-results" hidden={this.state.searchResultsHidden}>
+            <br />
+            No shows found
+          </div> :
+          <div id="show-results" hidden={this.state.searchResultsHidden}>
+            {this.state.shows.map(show => (
+              show.image === null ?
+                <img id="show-img" title={show.name} key={show.id} onClick={this.showHandleClick} src="https://static.tvmaze.com/images/no-img/no-img-portrait-text.png" alt={show.id} /> :
+                <img id="show-img" title={show.name} key={show.id} onClick={this.showHandleClick} src={show.image.original} alt={show.id} />
+            ))}
+          </div>
+        }
+        {this.state.episode === '' || this.state.episode === undefined || this.state.episode === null ?
+          <div id="no-results" hidden={this.state.episodeHidden}>
+            <br />
+            No episodes found
+          </div> :
           <div id="episode" hidden={this.state.episodeHidden}>
             <p id="episode-number">
               <span>
