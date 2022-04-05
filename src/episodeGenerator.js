@@ -74,7 +74,7 @@ export class EpisodeGenerator extends React.Component {
         <button onClick={this.searchHandleClick}>Submit</button>
         <button onClick={this.resetHandleClick}>Reset</button>
         {this.state.shows.length === 0 ?
-          <div id="no-results" hidden={this.state.searchResultsHidden}>
+          <div id="no-show-results" hidden={this.state.searchResultsHidden}>
             <br />
             No shows found
           </div> :
@@ -87,7 +87,7 @@ export class EpisodeGenerator extends React.Component {
           </div>
         }
         {this.state.episode === '' || this.state.episode === undefined || this.state.episode === null ?
-          <div id="no-results" hidden={this.state.episodeHidden}>
+          <div id="no-episode-results" hidden={this.state.episodeHidden}>
             <br />
             No episodes found
           </div> :
