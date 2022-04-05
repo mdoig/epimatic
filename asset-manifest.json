@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/epimatic/static/css/main.8db0320f.css",
+    "main.js": "/epimatic/static/js/main.742c8417.js",
+    "index.html": "/epimatic/index.html",
+    "main.8db0320f.css.map": "/epimatic/static/css/main.8db0320f.css.map",
+    "main.742c8417.js.map": "/epimatic/static/js/main.742c8417.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8db0320f.css",
+    "static/js/main.742c8417.js"
+  ]
+}
