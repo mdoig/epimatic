@@ -1,3 +1,13 @@
+a {
+  color: #605162;
+  text-decoration: none;
+}
+
+a:visited, a:active {
+  color: #a79ea8;
+  text-decoration: underline;
+}
+
 .App {
   text-align: center;
   align-items: center;
@@ -11,18 +21,13 @@
 
 .App-description {
   font: 3vmin 'Italiana', serif;
-  margin: 1vh 0 1vh;
+  margin: 1vmin 0;
 }
 
 .App-licenses {
   bottom: 5px;
   font-size: 1.25vmin;
   position: absolute;
-  z-index: -1;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 .App-main {
@@ -34,5 +39,22 @@
 .App-name {
   font: 10vmin 'Limelight', cursive;
   line-height: 0.8;
-  margin: 0px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .App-description {
+    font-size: calc(8px + 2vmin);
+    margin: 3vmin auto 2vmin;
+    width: 80%;
+  }
+
+  .App-licenses {
+    font-size: 2.25vmin;
+    width: 80%;
+  }
+
+  .App-name {
+    margin: 0;
+  }
 }
