@@ -1,70 +1,16 @@
-# Getting Started with Create React App
+# EpiMatic: A random TV episode generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is EpiMatic, a random TV episode generator. You can use this app when you don't know what to watch, or if you get the urge to revisit _Breaking Bad_ but don't have time for a full rewatch.
 
-## Available Scripts
+Simply use the input field to search for the show you want to watch and click the show image in the results. Upon choosing a show, the name, season, number, airdate, and screenshot of a random episode appear. Then, presumably, you watch that episode.
 
-In the project directory, you can run:
+To start over, click the `Reset` button or make a new search.
 
-### `npm start`
+**Disclaimer:** EpiMatic assumes you have the means to watch whatever episode it generates and is not responsible for a lack of access to any streaming services, boxed sets, Blu-rays, DVDs, VHS tapes, LaserDiscs, reruns, cable channels, broadcasts, kinescopes, or any other transmission or video storage formats.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technical stuff
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), licensed as [MIT](https://mit-license.org/). The TV show and episode data are pulled from the [TVmaze.com](https://www.tvmaze.com/) [API](https://api.tvmaze.com/), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). [Favicon](https://github.com/twitter/twemoji/blob/master/assets/svg/1f4fa.svg) is from [Twemoji](https://twemoji.twitter.com/), copyright 2020 Twitter, Inc. and other contributors, licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## License
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed as [MIT](https://mit-license.org/).
