@@ -42,28 +42,78 @@ button {
   top: 2vmin;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 810px) and (min-width: 500px) {
   button, input {
-    display: block;
-    margin: 0 auto 2vmin;
-    width: 80%;
+    font-size: 2.5vmin;
+    height: 5vmin;
+    margin: 0 2vmin 2vmin;
+    width: 35%;
   }
 
   #episode {
-    font-size: calc(8px + 1.5vmin);
+    font-size: calc(8px + 1.75vmin);
   }
+
+  #episode-img {
+    height: auto;
+    width: 80%;
+  }  
   
   #episode-name, #no-episode-results, #no-show-results {
-    font-size: calc(8px + 3vmin);
+    font-size: calc(8px + 3.25vmin);
   }
   
   #search-field {
+    display: block;
+    height: 5vmin;
     margin: auto auto -4vmin;
     width: 80%;
   }
 
   #show-img {
+    height: 25vmin;
     margin: auto 1vmin;
+    width: 17vmin;
+  }
+
+  #show-results {
+    margin: auto;
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  button, input {
+    display: block;
+    font-size: 4vmin;
+    height: 8vmin;
+    margin: 0 auto 2vmin;
+    width: 80%;
+  }
+
+  #episode {
+    font-size: calc(10px + 2vmin);
+  }
+
+  #episode-img {
+    height: auto;
+    width: 80%;
+  }  
+  
+  #episode-name, #no-episode-results, #no-show-results {
+    font-size: calc(10px + 4vmin);
+  }
+  
+  #search-field {
+    height: 8vmin;
+    margin: auto auto -4vmin;
+    width: 80%;
+  }
+
+  #show-img {
+    height: 50vmin;
+    margin: auto 2vmin;
+    width: 34vmin;
   }
 
   #show-results {

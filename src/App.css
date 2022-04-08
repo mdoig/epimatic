@@ -42,19 +42,39 @@ a:visited, a:active {
   margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 810px) and (min-width: 500px) {
   .App-description {
-    font-size: calc(8px + 2vmin);
+    font-size: calc(14px + 2vmin);
     margin: 3vmin auto 2vmin;
     width: 80%;
   }
 
   .App-licenses {
+    bottom: -20vmax;
+    font-size: 1.75vmin;
+    width: 80%;
+  }
+
+  .App-name {
+    font-size: 12vmin;
+  }
+}
+
+@media (max-width: 500px) {
+  .App-description {
+    font-size: calc(16px + 2vmin);
+    font-weight: bold;
+    margin: 3vmin auto 3vmin;
+    width: 80%;
+  }
+
+  .App-licenses {
+    bottom: -90vmax;
     font-size: 2.25vmin;
     width: 80%;
   }
 
   .App-name {
-    margin: 0;
+    font-size: 16vmin;
   }
 }
