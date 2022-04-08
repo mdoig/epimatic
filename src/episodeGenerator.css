@@ -14,6 +14,7 @@ button {
 }
 
 #episode-img {
+  border-radius: 10px;
   height: 36vmin;
   width: auto;
 }
@@ -29,6 +30,7 @@ button {
 }
 
 #show-img {
+  border-radius: 10px;
   cursor: pointer;
   height: 22vmin;
   margin: 0 2vmin 1vmin 0;
