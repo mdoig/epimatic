@@ -38,5 +38,9 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://mdoig.github.io/epimatic/"
+  "homepage": "https://mdoig.github.io/epimatic/",
+  "devDependencies": {
+    "@playwright/test": "^1.41.0",
+    "@types/node": "^20.11.5"
+  }
 }
