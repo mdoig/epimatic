@@ -7,6 +7,7 @@ export class EpisodeGenerator extends React.Component {
     this.state = {
       episode: '',
       episodeHidden: true,
+      episodesAll: [],
       search: '',
       searchResultsHidden: true,
       selectedShow: '',
@@ -14,6 +15,7 @@ export class EpisodeGenerator extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.resetHandleClick = this.resetHandleClick.bind(this);
+    this.retryHandleClick = this.retryHandleClick.bind(this);
     this.searchHandleClick = this.searchHandleClick.bind(this);
     this.showHandleClick = this.showHandleClick.bind(this);
   }
@@ -22,10 +24,17 @@ export class EpisodeGenerator extends React.Component {
     this.setState({ search: e.target.value });
   }
 
+  retryHandleClick() {
+    this.setState({
+      episode: getEpisodeNumber(this.state.episodesAll),
+    });
+  }
+
   resetHandleClick() {
     this.setState({
       episode: '',
       episodeHidden: true,
+      episodesAll: [],
       search: '',
       searchResultsHidden: true,
       shows: [],
@@ -55,11 +64,10 @@ export class EpisodeGenerator extends React.Component {
     fetch(allEpisodesUrl)
       .then(response => response.json())
       .then((data) => {
-        const episodeCount = data.length;
-        const episode = Math.floor(Math.random() * episodeCount);
         this.setState({
-          episode: data[episode],
+          episode: getEpisodeNumber(data),
           episodeHidden: false,
+          episodesAll: data,
           searchResultsHidden: true,
           selectedShow: e.target.title,
         });
@@ -73,6 +81,10 @@ export class EpisodeGenerator extends React.Component {
         <br />
         <button onClick={this.searchHandleClick}>Submit</button>
         <button onClick={this.resetHandleClick}>Reset</button>
+        {this.state.episodesAll.length > 0 && this.state.episodeHidden === false ?
+          <button onClick={this.retryHandleClick}>Retry</button> :
+          null
+        }
         {this.state.shows.length === 0 ?
           <div id="no-show-results" hidden={this.state.searchResultsHidden}>
             <br />
@@ -114,4 +126,10 @@ export class EpisodeGenerator extends React.Component {
       </div>
     )
   }
+};
+
+const getEpisodeNumber = (episodeArray) => {
+  const episodeCount = episodeArray.length;
+  const episodeIndex = Math.floor(Math.random() * (episodeCount - 1));
+  return episodeArray[episodeIndex];
 };
