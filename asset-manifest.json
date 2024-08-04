@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/epimatic/static/css/main.2dfa77ef.css",
-    "main.js": "/epimatic/static/js/main.d36769ec.js",
+    "main.js": "/epimatic/static/js/main.e5cdb8e0.js",
     "index.html": "/epimatic/index.html",
     "main.2dfa77ef.css.map": "/epimatic/static/css/main.2dfa77ef.css.map",
-    "main.d36769ec.js.map": "/epimatic/static/js/main.d36769ec.js.map"
+    "main.e5cdb8e0.js.map": "/epimatic/static/js/main.e5cdb8e0.js.map"
   },
   "entrypoints": [
     "static/css/main.2dfa77ef.css",
-    "static/js/main.d36769ec.js"
+    "static/js/main.e5cdb8e0.js"
   ]
 }
