@@ -2,7 +2,7 @@
 
 This is EpiMatic, a random TV episode generator. You can use this app when you don't know what to watch, or if you get the urge to revisit _Breaking Bad_ but don't have time for a full rewatch.
 
-Simply use the input field to search for the show you want to watch and click the show image in the results. Upon choosing a show, the name, season, number, airdate, and screenshot of a random episode appear. Then, presumably, you watch that episode. Didn't like the first result? Click the `Retry` button you're satisfied.
+Simply use the input field to search for the show you want to watch and click the show image in the results. Upon choosing a show, the name, season, number, airdate, and screenshot of a random episode appear. Then, presumably, you watch that episode. Didn't like the first result? Click the `Retry` button until you're satisfied.
 
 To start over, click the `Reset` button or make a new search.
 
